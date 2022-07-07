@@ -1,0 +1,26 @@
+.login{
+    min-height: 90vh;
+    background-color: rgb(213, 223, 223);
+    display: grid;
+    .container{
+        padding: 20px 60px;
+        margin: auto;
+        background-color: #eee;
+        max-width: 500px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.394);
+        min-height: 200px;
+    }form{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 20px;
+        label{
+            margin-top: 10px;
+            margin-bottom: 4px;
+        }
+        button{
+            margin-top: 20px;
+            padding:8px 12px;
+        }
+    }
+}
