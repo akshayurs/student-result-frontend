@@ -1,0 +1,16 @@
+.admin{
+    .container{
+        max-width: 500px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.39);
+        display: flex;
+        margin: 50px auto;
+        background-color: #eee;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        padding: 10px;
+        a{
+            padding: 5px;
+        }
+    }
+}

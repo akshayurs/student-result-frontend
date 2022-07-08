@@ -12,6 +12,7 @@ function Login({ setLoggedin }) {
         <form
           onSubmit={async (e) => {
             e.preventDefault()
+            if (username === '' || password === '') return
             const { data } = await fetchData(
               process.env.REACT_APP_SERVER_URL + '/signin',
               'POST',

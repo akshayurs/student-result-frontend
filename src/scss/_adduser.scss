@@ -1,0 +1,33 @@
+.adduser{
+    min-height: 88vh;
+    background-color: #eee;
+    .title{
+        padding-top: 35px;
+        margin-bottom: 20px;
+        font-size: 20px;
+        text-align: center;
+    }
+    form{
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.424);
+        padding: 20px;
+        text-align: center;
+        max-width: min(500px,90vw);
+        margin: 0 auto;
+        background-color: #eee;
+        table{
+            margin: 0 auto;
+            td{
+                padding:9px;
+            }
+            input{
+                padding: 3px;
+            }
+            select{
+                padding:4px;
+            }
+            button{
+                padding: 7px 10px;
+            }
+        }
+    }
+}

@@ -15,6 +15,7 @@ function Header({ loggedin, setLoggedin }) {
             if (data.success) {
               navigate('/')
               setLoggedin(false)
+              localStorage.setItem('userType', '')
               toast.success('You are successfully logged out')
             }
           }}

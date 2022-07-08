@@ -1,24 +1,29 @@
 import { useEffect, useState } from 'react'
 import {
-  BrowserRouter,
   Route,
   Routes,
   Navigate,
   useNavigate,
+  useLocation,
 } from 'react-router-dom'
 import AdminDefault from './pages/AdminDefault'
-import { ToastContainer, toast } from 'react-toastify'
+import { ToastContainer } from 'react-toastify'
 import Login from './pages/Login'
 import { fetchData } from './Helpers/Fetch'
 import StudentDefault from './pages/StudentDefault'
 import TeacherDefault from './pages/TeacherDefault'
 import './scss/main.scss'
 import Header from './components/Header'
+import AddUser from './pages/AddUser'
 import 'react-toastify/dist/ReactToastify.css'
+import RemoveUser from './pages/RemoveUser'
+import Result from './pages/Result'
+import ListUsers from './pages/ListUsers'
 function App() {
   const navigate = useNavigate()
   const [loggedin, setLoggedin] = useState(false)
-  const [userType, setUserType] = useState('')
+  const [userType, setUserType] = useState(localStorage.getItem('userType'))
+  const location = useLocation()
   useEffect(() => {
     let loggedin = localStorage.getItem('loggedin')
     if (loggedin === 'true') setLoggedin(true)
@@ -28,8 +33,10 @@ function App() {
       )
       if (data.status === 200) {
         localStorage.setItem('loggedin', 'true')
+        localStorage.setItem('userType', data.userType)
         setUserType(data.userType)
         setLoggedin(true)
+        if (location.pathname !== '/') return
         if (data.userType === 'admin') navigate('/admin')
         else if (data.userType === 'student') navigate('/student')
         else if (data.userType === 'teacher') navigator('/teacher')
@@ -54,7 +61,7 @@ function App() {
           path="/"
           exact
           element={
-            loggedin ? (
+            loggedin && location.pathname !== '/' ? (
               loggedInComponent
             ) : (
               <Login loggedin={loggedin} setLoggedin={setLoggedin} />
@@ -94,6 +101,21 @@ function App() {
             )
           }
         />
+        <Route
+          path="/adduser"
+          exact
+          element={userType === 'admin' ? <AddUser /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/removeuser"
+          exact
+          element={userType === 'admin' ? <RemoveUser /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/listusers"
+          element={userType === 'admin' ? <ListUsers /> : <Navigate to="/" />}
+        />
+        <Route path="/result" element={<Result />} />
       </Routes>
     </div>
   )
