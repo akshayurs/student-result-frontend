@@ -1,20 +1,25 @@
 import { useState } from 'react'
 import { toast } from 'react-toastify'
 import { fetchData } from '../Helpers/Fetch'
+import Loading from '../Helpers/LoadingScreen'
 
 function AddUser() {
   const [name, setName] = useState('')
   const [username, setUsername] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [userType, setUserType] = useState('')
+  const [userType, setUserType] = useState('student')
+  const [loading, setLoading] = useState({ loading: false, text: '' })
 
   return (
     <div className="adduser">
+      <Loading loading={loading.loading} />
       <div className="title">Add User</div>
       <form
         onSubmit={async (e) => {
           e.preventDefault()
+          setLoading({ loading: true })
+
           const { data } = await fetchData(
             process.env.REACT_APP_SERVER_URL + '/signup',
             'POST',
@@ -26,6 +31,7 @@ function AddUser() {
               userType,
             }
           )
+          setLoading({ loading: false })
           if (data.status === 200) {
             toast.success('User Added')
             setName('')

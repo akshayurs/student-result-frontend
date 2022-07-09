@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { fetchData } from '../Helpers/Fetch'
+import Loading from '../Helpers/LoadingScreen'
 
 function Result() {
   const [searchParams, setSearchParams] = useSearchParams()
@@ -9,15 +10,20 @@ function Result() {
   const usn = searchParams.get('usn')
   const [result, setResult] = useState([])
   const [data, setData] = useState(null)
+  const [loading, setLoading] = useState({ loading: false, text: '' })
+
   useEffect(() => {
     if (sem === undefined || sem === null) return
     ;(async () => {
+      setLoading({ loading: true })
+
       const { data } = await fetchData(
         process.env.REACT_APP_SERVER_URL +
-          (usn?.length === 0
+          (!usn
             ? `/viewmyresult?sem=${sem}`
             : `/viewresultbyusn?sem=${sem}&usn=${usn}`)
       )
+      setLoading({ loading: false })
       if (data.success) {
         setResult(data.result.result)
       } else {
@@ -62,6 +68,7 @@ function Result() {
   sgpa /= 1000
   return (
     <div className="result">
+      <Loading loading={loading.loading} />
       <table>
         <tr>
           <th>Subject Code</th>

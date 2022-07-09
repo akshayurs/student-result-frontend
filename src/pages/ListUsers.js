@@ -3,30 +3,39 @@ import { useEffect } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { fetchData } from '../Helpers/Fetch'
+import Loading from '../Helpers/LoadingScreen'
 
 function ListUsers() {
   const [searchParams, setSearchParams] = useSearchParams()
+  const [loading, setLoading] = useState({ loading: false, text: '' })
   const [users, setUsers] = useState([])
   const userType = searchParams.get('type')
+  const [temp, setTemp] = useState(0)
   useEffect(() => {
     ;(async () => {
+      setLoading({ loading: true })
+      console.log(searchParams + temp)
       const { data } = await fetchData(
         process.env.REACT_APP_SERVER_URL + `/listusers?type=${userType}`
       )
+      setLoading({ loading: false })
+      if (data.success && data.users.length === 0) {
+        toast.info('No users found')
+      }
       if (data.success) {
-        console.log(data)
         setUsers(data.users)
       }
     })()
-  }, [searchParams])
+  }, [])
   return (
     <div className="listusers">
-      <Link to="/adduser">Add User</Link>
-      <table>
+      <Loading loading={loading.loading} text={loading.text} />
+
+      <table cellPadding="5px">
         <tr>
-          <th>name</th>
-          <th>username</th>
-          <th>email</th>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
           <th></th>
         </tr>
         {users.map((item) => (
@@ -47,6 +56,7 @@ function ListUsers() {
 
                   if (data.success) {
                     toast.success('User Account Deleted Successfully')
+                    setTemp((prev) => prev + 1)
                   } else {
                     toast.error(data.message)
                   }
@@ -58,6 +68,9 @@ function ListUsers() {
           </tr>
         ))}
       </table>
+      <Link className="add" to="/adduser">
+        Add User
+      </Link>
     </div>
   )
 }

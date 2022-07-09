@@ -3,3 +3,32 @@ body{
     padding: 0;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+a {
+    color: unset;
+    text-decoration: unset;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+textarea,
+html,
+input {
+    font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, Helvetica,
+        'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+        'Droid Sans', 'Helvetica Neue', sans-serif;
+}

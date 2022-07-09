@@ -5,6 +5,7 @@ import {
   Navigate,
   useNavigate,
   useLocation,
+  Router,
 } from 'react-router-dom'
 import AdminDefault from './pages/AdminDefault'
 import { ToastContainer } from 'react-toastify'
@@ -19,6 +20,8 @@ import 'react-toastify/dist/ReactToastify.css'
 import RemoveUser from './pages/RemoveUser'
 import Result from './pages/Result'
 import ListUsers from './pages/ListUsers'
+import PublishResult from './pages/PublishResult'
+import AddResult from './pages/AddResult'
 function App() {
   const navigate = useNavigate()
   const [loggedin, setLoggedin] = useState(false)
@@ -64,7 +67,12 @@ function App() {
             loggedin && location.pathname !== '/' ? (
               loggedInComponent
             ) : (
-              <Login loggedin={loggedin} setLoggedin={setLoggedin} />
+              <Login
+                userType={userType}
+                setUserType={setUserType}
+                loggedin={loggedin}
+                setLoggedin={setLoggedin}
+              />
             )
           }
         />
@@ -97,7 +105,8 @@ function App() {
             userType === 'admin' ? (
               <AdminDefault loggedin={loggedin} setLoggedin={setLoggedin} />
             ) : (
-              <Navigate to="/" />
+              // <Navigate to="/" />
+              'zzzzzz'
             )
           }
         />
@@ -115,6 +124,13 @@ function App() {
           path="/listusers"
           element={userType === 'admin' ? <ListUsers /> : <Navigate to="/" />}
         />
+        <Route
+          path="/publish"
+          element={
+            userType === 'admin' ? <PublishResult /> : <Navigate to="/" />
+          }
+        />
+        <Route path="/addresult" element={<AddResult />} />
         <Route path="/result" element={<Result />} />
       </Routes>
     </div>

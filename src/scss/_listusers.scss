@@ -1,0 +1,27 @@
+.listusers{
+    .add{
+        display: block;
+        padding: 6px;
+        text-align: center;
+        width: max-content;
+        background-color: #eee;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.368);
+        border-radius: 5px;
+        border:1px solid black;
+        margin: 30px auto;
+    }
+    table{
+        margin: 10px auto;
+        text-align: center;
+        th{
+            padding: 10px;
+        }
+        td{
+            padding: 5px;
+            min-width: 65px;
+        }
+        button{
+            padding:5px;
+        }
+    }
+}
