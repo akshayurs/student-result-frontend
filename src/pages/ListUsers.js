@@ -26,11 +26,10 @@ function ListUsers() {
         setUsers(data.users)
       }
     })()
-  }, [])
+  }, [temp])
   return (
     <div className="listusers">
       <Loading loading={loading.loading} text={loading.text} />
-
       <table cellPadding="5px">
         <tr>
           <th>Name</th>
