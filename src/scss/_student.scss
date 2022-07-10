@@ -1,0 +1,27 @@
+.student{
+    .details{
+        text-align: center;
+        padding: 10px;
+        
+    }
+    .container{
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.33);
+        max-width: 500px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #eee;
+        .title{
+            text-align: center;
+            font-size: 20px;
+            padding: 10px;
+        }
+        .links{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            a{
+                text-align: center;
+                padding: 5px;
+            }
+        }
+    }
+}

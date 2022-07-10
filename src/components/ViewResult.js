@@ -7,6 +7,7 @@ function ViewResult() {
   const navigate = useNavigate()
   return (
     <div className="viewresult">
+      <div className="title">View Result</div>
       <form
         onSubmit={(e) => {
           e.preventDefault()
@@ -16,11 +17,14 @@ function ViewResult() {
         <input
           type="text"
           value={usn}
+          required
+          placeholder="USN"
           onChange={(e) => setUsn(e.target.value)}
         />
         <input
           type="number"
           value={sem}
+          placeholder="Semester"
           onChange={(e) => setSem(e.target.value)}
         />
         <button>view</button>

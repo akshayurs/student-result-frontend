@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { toast } from 'react-toastify'
+import Details from '../components/Details'
 import { fetchData } from '../Helpers/Fetch'
 import Loading from '../Helpers/LoadingScreen'
 
@@ -29,7 +30,7 @@ function Result() {
       } else {
         toast.error(data.message)
       }
-      console.log(data)
+      setData(data)
     })()
   }, [sem])
   let sgpa = 0
@@ -69,6 +70,11 @@ function Result() {
   return (
     <div className="result">
       <Loading loading={loading.loading} />
+      <div className="details">
+        <div className="name">{data?.result?.name}</div>
+        <div className="usn">{data?.result?.usn}</div>
+        <div className="sem">{data?.result?.sem} Semester</div>
+      </div>
       <table>
         <tr>
           <th>Subject Code</th>
@@ -79,7 +85,7 @@ function Result() {
         {result.map((item) => (
           <tr>
             <td>{item.code}</td>
-            <td>{item.subject}</td>
+            <td>{item.title}</td>
             <td>{item.credit}</td>
             <td>{item.grade}</td>
           </tr>
