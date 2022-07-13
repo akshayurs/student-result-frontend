@@ -25,12 +25,10 @@ import AddResult from './pages/AddResult'
 import ViewResult from './pages/ViewResult'
 function App() {
   const navigate = useNavigate()
-  const [loggedin, setLoggedin] = useState(false)
+  const [loggedin, setLoggedin] = useState(localStorage.getItem('loggedin'))
   const [userType, setUserType] = useState(localStorage.getItem('userType'))
   const location = useLocation()
   useEffect(() => {
-    let loggedin = localStorage.getItem('loggedin')
-    if (loggedin === 'true') setLoggedin(true)
     ;(async () => {
       const { data } = await fetchData(
         process.env.REACT_APP_SERVER_URL + '/checktoken'
