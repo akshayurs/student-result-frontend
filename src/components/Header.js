@@ -7,31 +7,33 @@ function Header({ loggedin, setLoggedin }) {
   const navigate = useNavigate()
   const [loading, setLoading] = useState({ loading: false, text: '' })
   return (
-    <header>
+    <div>
       <Loading loading={loading.loading} />
-      <p>
-        <Link to="/">JSSSTU</Link>
-      </p>
-      {loggedin && (
-        <button
-          onClick={async () => {
-            setLoading({ loading: true })
-            const { data } = await fetchData(
-              process.env.REACT_APP_SERVER_URL + '/signout'
-            )
-            setLoading({ loading: false })
-            if (data.success) {
-              navigate('/')
-              setLoggedin(false)
-              localStorage.setItem('userType', '')
-              toast.success('You are successfully logged out')
-            }
-          }}
-        >
-          Logout
-        </button>
-      )}
-    </header>
+      <header>
+        <p>
+          <Link to="/">JSSSTU</Link>
+        </p>
+        {loggedin && (
+          <button
+            onClick={async () => {
+              setLoading({ loading: true })
+              const { data } = await fetchData(
+                process.env.REACT_APP_SERVER_URL + '/signout'
+              )
+              setLoading({ loading: false })
+              if (data.success) {
+                navigate('/')
+                setLoggedin(false)
+                localStorage.setItem('userType', '')
+                toast.success('You are successfully logged out')
+              }
+            }}
+          >
+            Logout
+          </button>
+        )}
+      </header>
+    </div>
   )
 }
 
