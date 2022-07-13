@@ -23,9 +23,17 @@
         max-width: 400px;
         margin:0 auto;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.344);
-        input{
-            padding: 3px;
-            margin:5px;
+        input {
+            margin-bottom: 10px;
+            // min-width: 300px;
+            padding: 4px;
+            border: none;
+            background: none;
+            border-bottom: 1px solid grey;
+        }
+        input:focus {
+            outline: none;
+            border-bottom: 1px solid black;
         }
         button{
             padding: 6px 8px;

@@ -37,6 +37,8 @@ function PublishResult() {
           <input
             type="number"
             value={sem}
+            min="1"
+            max="8"
             id="sem"
             onChange={(e) => setSem(e.target.value)}
           />

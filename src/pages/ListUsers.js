@@ -14,7 +14,6 @@ function ListUsers() {
   useEffect(() => {
     ;(async () => {
       setLoading({ loading: true })
-      console.log(searchParams + temp)
       const { data } = await fetchData(
         process.env.REACT_APP_SERVER_URL + `/listusers?type=${userType}`
       )
@@ -43,7 +42,11 @@ function ListUsers() {
           <tr key={index}>
             <td>{index + 1}</td>
             <td>{item.name}</td>
-            <td>{item.username}</td>
+            <td>
+              {userType === 'student'
+                ? item.username.toUpperCase()
+                : item.username}
+            </td>
             <td>{item.email}</td>
             <td>
               <button

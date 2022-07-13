@@ -104,8 +104,7 @@ function App() {
             userType === 'admin' ? (
               <AdminDefault loggedin={loggedin} setLoggedin={setLoggedin} />
             ) : (
-              // <Navigate to="/" />
-              'zzzzzz'
+              <Navigate to="/" />
             )
           }
         />

@@ -51,7 +51,6 @@ function AddResult() {
               process.env.REACT_APP_SERVER_URL +
                 `/viewresultbyusn?usn=${usn}&sem=${sem}`
             )
-            console.log(data)
             setLoading({ loading: false })
             if (!data.success) {
               toast.info('Results are not updated')
@@ -149,7 +148,9 @@ function AddResult() {
               </td>
               <td>
                 <input
-                  type="text"
+                  type="number"
+                  min="1"
+                  max="10"
                   value={resultTemp.credit}
                   onChange={(e) =>
                     setResultTemp((prev) => {
@@ -217,7 +218,6 @@ function AddResult() {
                 } else {
                   toast.error(data.message)
                 }
-                console.log(data)
               }}
             >
               Update

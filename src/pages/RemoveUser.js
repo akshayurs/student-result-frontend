@@ -31,9 +31,10 @@ function RemoveUser() {
           }
         }}
       >
-        <label htmlFor="">Username</label>
+        <label htmlFor="username">Username</label>
         <input
           type="text"
+          id="username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />

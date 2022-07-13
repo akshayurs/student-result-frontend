@@ -13,7 +13,6 @@ function Details() {
         name: data.user.name,
         email: data.user.email,
       })
-      console.log(data)
     })()
   }, [])
   return (
