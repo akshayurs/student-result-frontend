@@ -1,16 +1,13 @@
 import { Link } from 'react-router-dom'
 import Details from '../components/Details'
-import ViewResult from '../components/ViewResult'
 
 function TeacherDefalut() {
   return (
     <div className="teacher">
       <div className="container">
         <Details />
-        <ViewResult />
-        <Link to="/addresult" className="addresult">
-          <button>Add Result</button>
-        </Link>
+        <Link to="/viewresultbyusn">View Result</Link>
+        <Link to="/addresult">Add Result</Link>
       </div>
     </div>
   )

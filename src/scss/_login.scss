@@ -1,26 +1,57 @@
 .login{
     min-height: 90vh;
-    background-color: rgb(213, 223, 223);
+    background:url('/bg-01.webp');
+    background-size: cover;
+    min-height: 92vh;
     display: grid;
     .container{
-        padding: 20px 60px;
+        .title{
+            text-align: center;
+            font-weight: 500;
+            font-size: 22px;
+        }
+        padding: 20px 50px;
         margin: auto;
-        background-color: #eee;
-        max-width: 500px;
+        border-radius: 8px;
+        background-color: rgba(255, 255, 255, 0.779);
+        max-width: 600px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.394);
-        min-height: 200px;
+        min-height: 350px;
     }form{
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 20px;
+        padding-top: 35px;
         label{
+            width: 100%;
             margin-top: 10px;
-            margin-bottom: 4px;
+            font-weight: 500;
+        }
+        input{
+            margin-bottom: 10px;
+            min-width: 300px;
+            padding: 4px;
+            border:none;
+            background: none;
+            border-bottom: 1px solid grey;
+        }
+        input:focus{
+            outline: none;
+            border-bottom: 1px solid black;
         }
         button{
             margin-top: 20px;
-            padding:8px 12px;
+            min-width: 170px;
+            border-radius: 10px;
+            color:white;
+            border:1px solid black;
+            // background: -webkit-linear-gradient(right, #00dbde, #fc00ff, #00dbde, #fc00ff);
+            background-color: rgb(44, 44, 44);
+            padding:12px;
+            &:hover{
+                background-color: white;
+                color:black;
+            }
         }
     }
 }

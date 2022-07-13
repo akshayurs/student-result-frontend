@@ -1,12 +1,37 @@
 .admin{
+    min-height: 90vh;
+    background: #7474BF;
+    padding-top: 100px;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #348AC7, #7474BF);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #348AC7, #7474BF);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     .container{
         .details{
             padding: 10px;
         }
+        .row{
+            padding-bottom: 20px;
+            margin-top: 20px;
+            display: flex;
+            .col{
+                display: flex;
+                padding: 0 10px;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                a{
+                    display: block;
+                    color:#305c7c;
+                }
+            }
+        }
+        border-radius: 10px;
         max-width: 500px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.39);
         display: flex;
-        margin: 50px auto;
+        margin: 0px auto;
         background-color: #eee;
         justify-content: center;
         text-align: center;

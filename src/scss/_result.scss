@@ -17,6 +17,26 @@
             text-align: center;
             padding:5px;
         }
+        tr:first-child {
+            background-color: #01987A !important;
+            color: white;
+        }
+        th {
+            font-weight: 500;
+            padding: 10px;
+
+            &:last-child {
+                border-radius: 0 10px 0px 0;
+            }
+
+            &:first-child {
+                border-radius: 10px 0 0 0px;
+            }
+        }
+
+        tr:nth-child(odd) {
+            background-color: rgba(128, 128, 128, 0.133);
+        }
     }
     .sgpa{
         padding: 20px;

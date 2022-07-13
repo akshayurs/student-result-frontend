@@ -1,5 +1,5 @@
 import { fetchData } from '../Helpers/Fetch'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, Link } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import Loading from '../Helpers/LoadingScreen'
 import { useState } from 'react'
@@ -9,7 +9,9 @@ function Header({ loggedin, setLoggedin }) {
   return (
     <header>
       <Loading loading={loading.loading} />
-      <p>COLLEGE</p>
+      <p>
+        <Link to="/">JSSSTU</Link>
+      </p>
       {loggedin && (
         <button
           onClick={async () => {

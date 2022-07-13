@@ -10,9 +10,11 @@ function StudentDefault() {
         <Details />
         <div className="title">View Result</div>
         <div className="links">
-          {[1, 2, 3, 4, 5, 6, 7, 8].map((item, index) => (
-            <Link to={`/result?sem=${item}`}> sem-{item} </Link>
-          ))}
+          {['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th'].map(
+            (item, index) => (
+              <Link to={`/result?sem=${index + 1}`}>{item} sem </Link>
+            )
+          )}
         </div>
       </div>
     </div>

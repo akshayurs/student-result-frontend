@@ -1,13 +1,12 @@
 header{
     position: relative;
-    background-color: rgb(24, 28, 50);
-    color:white;
     padding: 15px;
-    font-size: 20px;
+    font-size: 23px;
     display: flex;
     align-items: center;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.484);
-    z-index: 999;
+    font-weight: 600;
+    background-color: #eee;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.984);
     p{
         flex:1;
         text-align: center;
@@ -18,5 +17,14 @@ header{
         position: absolute;
         padding: 6px;
         margin-right: 20px;
+        background: none;
+        border:1px solid black;
+        border-radius: 10px;
+        padding: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.145);
+        &:hover{
+            background-color: black;
+            color:white;
+        }
     }
 }

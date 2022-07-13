@@ -75,6 +75,8 @@ function AddResult() {
             id="sem"
             type="number"
             value={sem}
+            min="1"
+            max="8"
             onChange={(e) => setSem(e.target.value)}
           />
           <label htmlFor="year">Year</label>
@@ -101,6 +103,7 @@ function AddResult() {
               <th>Subject Title</th>
               <th>Credit</th>
               <th>Grade</th>
+              <th></th>
             </tr>
             {result.map((item, index) => (
               <tr>
@@ -126,7 +129,7 @@ function AddResult() {
                   value={resultTemp.code}
                   onChange={(e) =>
                     setResultTemp((prev) => {
-                      return { ...prev, code: e.target.value }
+                      return { ...prev, code: e.target.value.toUpperCase() }
                     })
                   }
                   placeholder="Code"
@@ -162,7 +165,10 @@ function AddResult() {
                   value={resultTemp.grade}
                   onChange={(e) =>
                     setResultTemp((prev) => {
-                      return { ...prev, grade: e.target.value }
+                      return {
+                        ...prev,
+                        grade: e.target.value.toUpperCase().charAt(0),
+                      }
                     })
                   }
                   placeholder="Grade"
@@ -170,6 +176,7 @@ function AddResult() {
               </td>
               <td>
                 <button
+                  className="add"
                   onClick={() => {
                     if (
                       resultTemp.code.trim() === '' ||

@@ -1,26 +1,41 @@
 .adduser{
     min-height: 88vh;
+    background: #232526;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #414345, #232526);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #414345, #232526);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background-color: #eee;
     .title{
         padding-top: 35px;
         margin-bottom: 20px;
         font-size: 20px;
         text-align: center;
+        color:white;
     }
     form{
-        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.424);
+        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.924);
         padding: 20px;
         text-align: center;
         max-width: min(500px,90vw);
         margin: 0 auto;
         background-color: #eee;
+        border-radius: 10px;
         table{
             margin: 0 auto;
             td{
                 padding:9px;
             }
             input{
-                padding: 3px;
+                background: none;
+                border:none;
+                border-bottom: 1px solid grey;
+                padding: 4px;
+                &:focus{
+                    outline: none;
+
+                }
             }
             select{
                 padding:4px;

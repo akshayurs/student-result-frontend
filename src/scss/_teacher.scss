@@ -1,15 +1,25 @@
 .teacher{
+    min-height: 90vh;
+    padding-top: 100px;
+    background: #642B73;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #C6426E, #642B73);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #C6426E, #642B73);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     .container{
         background-color: #eee;
-        max-width: 500px;
-        padding: 20px;
-        margin:50px auto;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.415);
+        max-width: 400px;
+        padding: 30px;
+        border-radius: 10px;
+        margin:0px auto;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.915);
         .details{
             text-align: center;
             padding-bottom: 20px;
         }
-        .addresult{
+        a{
+            color:rgb(36, 62, 139);
             margin-top: 20px;
             display: flex;
             justify-content: center;

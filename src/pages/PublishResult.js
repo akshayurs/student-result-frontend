@@ -11,6 +11,7 @@ function PublishResult() {
   return (
     <div className="publish">
       <Loading loading={loading.loading} />
+
       <div className="container">
         <form
           onSubmit={async (e) => {

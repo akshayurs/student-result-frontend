@@ -30,15 +30,18 @@ function ListUsers() {
   return (
     <div className="listusers">
       <Loading loading={loading.loading} text={loading.text} />
-      <table cellPadding="5px">
+      <div className="title">{userType}</div>
+      <table>
         <tr>
+          <th>No</th>
           <th>Name</th>
           <th>Username</th>
           <th>Email</th>
           <th></th>
         </tr>
-        {users.map((item) => (
-          <tr>
+        {users.map((item, index) => (
+          <tr key={index}>
+            <td>{index + 1}</td>
             <td>{item.name}</td>
             <td>{item.username}</td>
             <td>{item.email}</td>
@@ -67,8 +70,8 @@ function ListUsers() {
           </tr>
         ))}
       </table>
-      <Link className="add" to="/adduser">
-        Add User
+      <Link to="/adduser">
+        <button className="add">Add User</button>
       </Link>
     </div>
   )

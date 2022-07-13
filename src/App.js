@@ -22,6 +22,7 @@ import Result from './pages/Result'
 import ListUsers from './pages/ListUsers'
 import PublishResult from './pages/PublishResult'
 import AddResult from './pages/AddResult'
+import ViewResult from './pages/ViewResult'
 function App() {
   const navigate = useNavigate()
   const [loggedin, setLoggedin] = useState(false)
@@ -132,6 +133,7 @@ function App() {
         />
         <Route path="/addresult" element={<AddResult />} />
         <Route path="/result" element={<Result />} />
+        <Route path="/viewresultbyusn" element={<ViewResult />} />
       </Routes>
     </div>
   )

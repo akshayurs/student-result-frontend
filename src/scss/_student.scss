@@ -1,13 +1,22 @@
 .student{
+    min-height: 90vh;
+    padding-top: 50px;
+    background: #3C3B3F;
+        /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #605C3C, #3C3B3F);
+        /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #605C3C, #3C3B3F);
+        /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     .details{
         text-align: center;
         padding: 10px;
         
     }
     .container{
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.33);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.93);
         max-width: 500px;
-        margin: 50px auto;
+        margin: 0px auto;
+        border-radius: 10px;
         padding: 20px;
         background-color: #eee;
         .title{
@@ -21,6 +30,7 @@
             a{
                 text-align: center;
                 padding: 5px;
+                color:#172562;
             }
         }
     }

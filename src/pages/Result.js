@@ -72,7 +72,7 @@ function Result() {
       <Loading loading={loading.loading} />
       <div className="details">
         <div className="name">{data?.result?.name}</div>
-        <div className="usn">{data?.result?.usn}</div>
+        <div className="usn">{data?.result?.usn.toUpperCase()}</div>
         <div className="sem">{data?.result?.sem} Semester</div>
       </div>
       <table>
@@ -84,10 +84,10 @@ function Result() {
         </tr>
         {result.map((item) => (
           <tr>
-            <td>{item.code}</td>
+            <td>{item.code.toUpperCase()}</td>
             <td>{item.title}</td>
             <td>{item.credit}</td>
-            <td>{item.grade}</td>
+            <td>{item.grade.toUpperCase()}</td>
           </tr>
         ))}
       </table>

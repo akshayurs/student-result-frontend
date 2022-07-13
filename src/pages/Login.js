@@ -27,6 +27,7 @@ function Login({ userType, setUserType, loggedin, setLoggedin }) {
     <div className="login">
       <Loading loading={loading.loading} />
       <div className="container">
+        <div className="title">LOGIN</div>
         <form
           onSubmit={async (e) => {
             e.preventDefault()
